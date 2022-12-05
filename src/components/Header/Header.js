@@ -8,7 +8,7 @@ import { CartState } from '../Context/Context'
 import '../css/styles.css';
 
 const Header = () => {
-    const { state: { cart }, dispatch } = CartState();
+    const { state: { cart }, dispatch,productDispatch } = CartState();
 
     return (
         <Navbar
@@ -24,12 +24,18 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Text className="search">
                     <FormControl
-                        style={{
-                            width: 500,
-                        }}
-                        placeholder="Search for Products"
-                        className="m-auto"
-                    />
+                       style={{ width: 500 }}
+                       type="search"
+                       placeholder="Search a product..."
+                       className="m-auto"
+                       aria-label="Search"
+                       onChange={(e) => {
+                         productDispatch({
+                           type: "FILTER_BY_SEARCH",
+                           payload: e.target.value,
+                         });
+                       }}
+                     />
                 </Navbar.Text>
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
