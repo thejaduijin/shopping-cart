@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Container, FormControl, Navbar } from "react-bootstrap";
+import { Badge, Button, Container, FormControl, Navbar } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import { AiFillDelete } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
@@ -66,6 +66,13 @@ const Header = () => {
                                         />
                                     </span>
                                 ))}
+                                <Link to='/cart'>
+                                    <Button style={{
+                                        width: "95%", margin: "0 10px"
+                                    }}>
+                                        Go To Cart
+                                    </Button>
+                                </Link>
                             </>
                         ) : (
                             <span
