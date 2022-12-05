@@ -2,6 +2,7 @@ import React from "react";
 import { Badge, Container, FormControl, Navbar } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -14,7 +15,7 @@ const Header = () => {
         >
             <Container>
                 <Navbar.Brand>
-                    <a href="/">Shopping Cart</a>
+                    <Link to="/">Shopping Cart</Link>
                 </Navbar.Brand>
                 <Navbar.Text className="search">
                     <FormControl
